@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Buildersgate Workshop · 2026.06.26–27</title>
+<meta name="description" content="빌더스게이트 1박 2일 워크샵 안내 — 일정, 집합장소(스파크플러스 홍대점), 숙소, 토론 주제." />
+<meta property="og:title" content="Buildersgate Workshop · 2026.06.26–27" />
+<meta property="og:description" content="함께 짓는 1박 2일 — 빌더란 무엇이고, 빌더스게이트는 무엇을 할 것인가." />
+<meta property="og:image" content="assets/room-3.jpeg" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{
+    --bg:        oklch(0.165 0.014 52);
+    --bg-2:      oklch(0.205 0.017 50);
+    --card:      oklch(0.245 0.019 48);
+    --card-2:    oklch(0.285 0.021 46);
+    --line:      oklch(0.36 0.02 50 / 0.55);
+    --ink:       oklch(0.965 0.012 85);
+    --muted:     oklch(0.76 0.022 72);
+    --faint:     oklch(0.6 0.02 65);
+    --amber:     oklch(0.83 0.135 76);
+    --terra:     oklch(0.68 0.15 46);
+    --terra-ink: oklch(0.22 0.04 45);
+    --radius:    14px;
+    --maxw:      1080px;
+    --ease:      cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--amber);color:var(--terra-ink)}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  p{text-wrap:pretty}
+  h1,h2,h3{text-wrap:balance;letter-spacing:-.02em;line-height:1.12;font-weight:800}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .eyebrow{
+    font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--amber);display:inline-flex;align-items:center;gap:.6em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--amber);opacity:.8}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(1.3) blur(12px);
+    background:oklch(0.165 0.014 52 / .72);
+    border-bottom:1px solid transparent;transition:border-color .3s,background .3s;
+  }
+  nav.scrolled{border-bottom-color:var(--line)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .brand b{color:var(--amber)}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{
+    font-size:.86rem;color:var(--muted);padding:7px 12px;border-radius:999px;
+    transition:color .2s,background .2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--bg-2)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;isolation:isolate;padding-bottom:54px}
+  .hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);filter:saturate(1.05)}
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg, oklch(0.165 0.014 52 / .25) 0%, oklch(0.165 0.014 52 / .55) 48%, var(--bg) 99%),
+      linear-gradient(95deg, oklch(0.165 0.02 45 / .6), transparent 60%);
+  }
+  .hero-content{max-width:var(--maxw);margin:0 auto;padding:0 22px;width:100%}
+  .hero h1{
+    font-size:clamp(2.6rem,8.5vw,5.4rem);font-weight:850;margin:.32em 0 .28em;
+  }
+  .hero h1 .accent{color:var(--amber)}
+  .hero .lead{font-size:clamp(1.02rem,2.4vw,1.28rem);color:var(--muted);max-width:34ch}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:30px}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:9px 15px;border:1px solid var(--line);border-radius:999px;
+    background:oklch(0.205 0.017 50 / .5);font-size:.92rem;font-weight:600;
+  }
+  .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}
+  .chip.warm .dot{background:var(--terra)}
+
+  .scrollcue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);color:var(--faint);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px;z-index:1}
+  .scrollcue span{width:1px;height:34px;background:linear-gradient(var(--faint),transparent);animation:cue 1.8s var(--ease) infinite}
+  @keyframes cue{0%{transform:scaleY(.2);transform-origin:top;opacity:.3}50%{transform:scaleY(1);opacity:1}100%{transform:scaleY(.2);transform-origin:bottom;opacity:.3}}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(56px,9vw,104px) 0}
+  .sec-head{margin-bottom:38px;max-width:46ch}
+  .sec-head h2{font-size:clamp(1.7rem,4.4vw,2.55rem);margin:.4em 0 .25em}
+  .sec-head p{color:var(--muted)}
+
+  /* quick facts */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-30px}
+  @media(max-width:760px){.facts{grid-template-columns:1fr}}
+  .fact{
+    background:linear-gradient(160deg,var(--card),var(--bg-2));
+    border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;
+    position:relative;overflow:hidden;
+  }
+  .fact .k{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .fact .v{font-size:1.32rem;font-weight:800;margin-top:12px;letter-spacing:-.01em}
+  .fact .s{color:var(--muted);font-size:.94rem;margin-top:6px}
+
+  /* timeline */
+  .day-tabs{display:inline-flex;gap:6px;padding:6px;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;margin-bottom:34px}
+  .day-tabs button{
+    font:inherit;font-weight:700;font-size:.95rem;color:var(--muted);cursor:pointer;
+    border:none;background:none;padding:9px 22px;border-radius:999px;transition:.25s var(--ease);
+  }
+  .day-tabs button[aria-selected="true"]{background:var(--amber);color:var(--terra-ink)}
+  .day-panel{display:none}
+  .day-panel.active{display:block;animation:fade .45s var(--ease)}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .tl{position:relative;border-left:2px solid var(--line);margin-left:8px}
+  .tl-item{position:relative;padding:0 0 30px 30px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{
+    content:"";position:absolute;left:-9px;top:5px;width:16px;height:16px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--terra);
+  }
+  .tl-item.key::before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 0 5px oklch(0.83 0.135 76 / .14)}
+  .tl-time{font-variant-numeric:tabular-nums;font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+  .tl-time .span{color:var(--faint);font-weight:600;font-size:.92rem}
+  .tl-desc{color:var(--muted);margin-top:2px}
+  .tl-item.key .tl-desc{color:var(--ink);font-weight:600}
+
+  /* place / stay shared */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:24px}}
+  .media{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);position:relative}
+  .media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .info h3{font-size:1.5rem;margin-bottom:6px}
+  .info .addr{color:var(--muted);margin:14px 0}
+  .addr-row{display:flex;gap:10px;align-items:flex-start;margin:9px 0}
+  .addr-row .lab{color:var(--amber);font-weight:700;font-size:.82rem;letter-spacing:.05em;min-width:62px;padding-top:2px}
+  .addr-row .val{font-weight:500}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.95rem;
+    padding:12px 20px;border-radius:11px;border:1px solid var(--line);transition:.22s var(--ease);
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--amber);color:var(--terra-ink);border-color:transparent}
+  .btn.primary:hover{box-shadow:0 10px 28px oklch(0.83 0.135 76 / .22)}
+  .btn.ghost:hover{background:var(--bg-2);border-color:var(--muted)}
+  .arrow{transition:transform .22s var(--ease)}
+  .btn:hover .arrow{transform:translate(3px,-3px)}
+
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .badge{font-size:.84rem;font-weight:600;color:var(--muted);padding:6px 13px;border:1px solid var(--line);border-radius:999px}
+  .badge b{color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums}
+
+  .mapbox{margin-top:26px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--bg-2)}
+  .mapbox iframe{width:100%;height:260px;border:0;display:block;filter:grayscale(.15) contrast(1.02)}
+  .map-note{font-size:.82rem;color:var(--faint);margin-top:10px}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:10px;margin-top:30px}
+  .gallery figure{overflow:hidden;border-radius:11px;border:1px solid var(--line);cursor:pointer;position:relative;margin:0}
+  .gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+  .gallery figure:hover img{transform:scale(1.07)}
+  .gallery .big{grid-column:span 2;grid-row:span 2}
+  .gallery .tall{grid-row:span 2}
+  @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px}.gallery .big{grid-column:span 2}}
+
+  /* topics */
+  .topics{background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+  .qcards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+  @media(max-width:760px){.qcards{grid-template-columns:1fr}}
+  .qcard{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px 28px;position:relative;overflow:hidden;
+  }
+  .qcard .qn{font-size:3.4rem;font-weight:850;color:oklch(0.83 0.135 76 / .22);line-height:.8;letter-spacing:-.04em}
+  .qcard h3{font-size:1.34rem;margin-top:14px}
+  .qcard p{color:var(--muted);margin-top:10px}
+  .topic-foot{margin-top:26px;color:var(--faint);font-size:.92rem;max-width:52ch}
+
+  /* prep */
+  .prep{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  @media(max-width:760px){.prep{grid-template-columns:repeat(2,1fr)}}
+  .prep .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px;font-weight:600}
+  .prep .item span{display:block;color:var(--amber);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;font-weight:700}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--faint)}
+  .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
+  .foot-inner .b{font-weight:800;color:var(--muted)}
+  .foot-inner .b b{color:var(--amber)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.scrollcue span{animation:none}}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:oklch(0.1 0.01 50 / .94);display:none;align-items:center;justify-content:center;padding:24px}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:86vh;border-radius:10px;object-fit:contain}
+  .lb button{position:absolute;background:oklch(0.245 0.019 48 / .8);border:1px solid var(--line);color:var(--ink);width:48px;height:48px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+  .lb button:hover{background:var(--amber);color:var(--terra-ink)}
+  .lb .close{top:20px;right:20px}
+  .lb .prev{left:18px;top:50%;transform:translateY(-50%)}
+  .lb .next{right:18px;top:50%;transform:translateY(-50%)}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Builders<b>gate</b> · Workshop</a>
+    <div class="nav-links">
+      <a href="#schedule">일정</a>
+      <a href="#place">집합</a>
+      <a href="#stay">숙소</a>
+      <a href="#topics">토론 주제</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="assets/room-3.jpeg" alt="숙소 루프탑 테라스" /></div>
+  <div class="hero-content">
+    <p class="eyebrow reveal">Buildersgate Summer Workshop</p>
+    <h1 class="reveal">함께 짓는<br><span class="accent">1박 2일</span></h1>
+    <p class="lead reveal">빌더란 무엇이고, 빌더스게이트는 무엇을 할 것인가.<br>홍대에서 하루를 비우고 마음껏 이야기하는 시간.</p>
+    <div class="hero-meta">
+      <span class="chip reveal"><span class="dot"></span>2026. 06. 26 (금) – 06. 27 (토)</span>
+      <span class="chip warm reveal"><span class="dot"></span>서울 홍대 · 1박 2일</span>
+    </div>
+  </div>
+  <div class="scrollcue"><span></span>Scroll</div>
+</header>
+
+<main>
+  <!-- quick facts -->
+  <section style="padding-top:64px">
+    <div class="wrap">
+      <div class="facts">
+        <div class="fact reveal">
+          <div class="k">집합</div>
+          <div class="v">6/26 (금) 오전 10:00</div>
+          <div class="s">스파크플러스 홍대점 · 홍대입구역 4번 출구</div>
+        </div>
+        <div class="fact reveal">
+          <div class="k">숙소</div>
+          <div class="v">Fave Stay · 집 전체</div>
+          <div class="s">홍대역 도보 1분 · 루프탑이 있는 단독 공간</div>
+        </div>
+        <div class="fact reveal">
+          <div class="k">메인 주제</div>
+          <div class="v">빌더, 그리고 그다음</div>
+          <div class="s">잘하는 빌더 / 빌더스게이트의 방향</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- schedule -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Schedule</p>
+        <h2>1박 2일, 이렇게 흘러갑니다</h2>
+        <p>집합부터 해산까지의 전체 흐름. 시간은 현장 상황에 따라 유연하게 조정될 수 있어요.</p>
+      </div>
+
+      <div class="day-tabs reveal" role="tablist">
+        <button role="tab" aria-selected="true" data-day="d1">첫날 · 6/26</button>
+        <button role="tab" aria-selected="false" data-day="d2">둘째날 · 6/27</button>
+      </div>
+
+      <div class="day-panel active" id="d1">
+        <div class="tl">
+          <div class="tl-item key reveal"><div class="tl-time">10:00</div><div class="tl-desc">홍대 스파크플러스 집합</div></div>
+          <div class="tl-item reveal"><div class="tl-time">10:00 <span class="span">– 12:00</span></div><div class="tl-desc">전체 모임 — 회의 및 팀 나누기</div></div>
+          <div class="tl-item reveal"><div class="tl-time">12:00 <span class="span">– 15:30</span></div><div class="tl-desc">팀별 자유 활동 (미션 포함)</div></div>
+          <div class="tl-item key reveal"><div class="tl-time">15:30</div><div class="tl-desc">숙소 입실, 짐 풀기</div></div>
+          <div class="tl-item reveal"><div class="tl-time">15:30 <span class="span">– 17:00</span></div><div class="tl-desc">회의 + 담소</div></div>
+          <div class="tl-item reveal"><div class="tl-time">17:00</div><div class="tl-desc">미션용 인터뷰 진행</div></div>
+          <div class="tl-item reveal"><div class="tl-time">17:00 <span class="span">– 19:00</span></div><div class="tl-desc">장보기 + 이벤트 준비</div></div>
+          <div class="tl-item key reveal"><div class="tl-time">19:00</div><div class="tl-desc">저녁 식사 + 이벤트</div></div>
+          <div class="tl-item reveal"><div class="tl-time">21:00</div><div class="tl-desc">정리 완료</div></div>
+          <div class="tl-item reveal"><div class="tl-time">21:00 <span class="span">– 22:00</span></div><div class="tl-desc">짧은 아이디어 회의</div></div>
+          <div class="tl-item reveal"><div class="tl-time">22:00 <span class="span">–</span></div><div class="tl-desc">자유시간</div></div>
+        </div>
+      </div>
+
+      <div class="day-panel" id="d2">
+        <div class="tl">
+          <div class="tl-item key reveal"><div class="tl-time">10:30</div><div class="tl-desc">숙소 퇴실</div></div>
+          <div class="tl-item reveal"><div class="tl-time">퇴실 후</div><div class="tl-desc">홍대 스파크플러스에서 간단한 이야기 나누기</div></div>
+          <div class="tl-item reveal"><div class="tl-time">점심 전</div><div class="tl-desc">해산</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- place -->
+  <section id="place" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Meeting Point</p>
+        <h2>집합 — 스파크플러스 홍대점</h2>
+        <p>6월 26일 오전 10시, 여기서 모입니다. 홍대입구역에서 거의 한 발짝 거리예요.</p>
+      </div>
+      <div class="split">
+        <div class="media reveal"><img src="assets/spark-2.jpg" alt="스파크플러스 홍대점 라운지" /></div>
+        <div class="info reveal">
+          <h3>오전 10:00 집합</h3>
+          <div class="addr-row"><div class="lab">주소</div><div class="val">서울 마포구 양화로 186 (동교동, LC타워)</div></div>
+          <div class="addr-row"><div class="lab">가는 길</div><div class="val">2호선 홍대입구역 4번 출구와 직접 연결 (도보 0분)</div></div>
+          <div class="addr-row"><div class="lab">교통</div><div class="val">2호선 · 경의중앙선 · 공항철도 트리플 역세권</div></div>
+          <div class="btns">
+            <a class="btn primary" href="https://naver.me/xhzCPTds" target="_blank" rel="noopener">네이버 지도로 길찾기 <span class="arrow">↗</span></a>
+            <a class="btn ghost" href="https://www.google.com/maps?q=서울특별시 마포구 양화로 186" target="_blank" rel="noopener">구글 지도 <span class="arrow">↗</span></a>
+          </div>
+          <div class="mapbox">
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=서울특별시 마포구 양화로 186 LC타워&hl=ko&z=16&output=embed" title="스파크플러스 홍대점 지도"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- stay -->
+  <section id="stay">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Where We Stay</p>
+        <h2>숙소 — 홍대 루프탑 하우스</h2>
+        <p>오후 3시 30분 입실. 20명까지 함께 묵을 수 있는 집 전체, 감성 루프탑과 넓은 거실이 있는 공간이에요.</p>
+      </div>
+      <div class="split">
+        <div class="info reveal">
+          <h3>Fave Stay · 집 전체</h3>
+          <p class="addr">홍대역 도보 1분 거리의 마포구 단독 숙소. 큰 다이닝 테이블과 루프탑 테라스가 있어 회의도, 저녁 이벤트도 한 공간에서.</p>
+          <div class="badges">
+            <span class="badge">집 전체</span>
+            <span class="badge">게스트 <b>16</b>명+</span>
+            <span class="badge">침실 <b>4</b></span>
+            <span class="badge">침대 <b>11</b></span>
+            <span class="badge">욕실 <b>3</b></span>
+            <span class="badge">루프탑</span>
+            <span class="badge">넷플릭스</span>
+          </div>
+          <div class="btns">
+            <a class="btn primary" href="https://www.airbnb.co.kr/rooms/805362983161258265" target="_blank" rel="noopener">에어비앤비에서 보기 <span class="arrow">↗</span></a>
+          </div>
+          <div class="mapbox">
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=홍대입구역&hl=ko&z=15&output=embed" title="숙소 인근(홍대입구역) 지도"></iframe>
+          </div>
+          <p class="map-note">정확한 숙소 주소·체크인 안내는 에어비앤비 예약 페이지에서 확인할 수 있어요. (지도는 홍대입구역 기준)</p>
+        </div>
+        <div class="reveal">
+          <div class="gallery" id="gallery">
+            <figure class="big"><img src="assets/room-1.jpeg" alt="숙소 다이닝 공간" /></figure>
+            <figure><img src="assets/room-6.jpeg" alt="숙소 침실" /></figure>
+            <figure><img src="assets/room-4.jpeg" alt="숙소 내부" /></figure>
+            <figure><img src="assets/room-2.jpeg" alt="숙소 거실" /></figure>
+            <figure><img src="assets/room-7.jpeg" alt="숙소 공간" /></figure>
+            <figure class="tall"><img src="assets/room-3.jpeg" alt="숙소 루프탑 테라스" /></figure>
+            <figure><img src="assets/room-8.jpeg" alt="숙소 공간" /></figure>
+            <figure><img src="assets/room-5.jpeg" alt="숙소 소품" /></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- topics -->
+  <section id="topics" class="topics">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">What We'll Talk About</p>
+        <h2>이번 워크샵의 메인 대화</h2>
+        <p>정해진 정답을 맞히는 자리가 아니라, 각자의 생각을 꺼내 놓고 함께 다듬는 자유로운 토론입니다.</p>
+      </div>
+      <div class="qcards">
+        <div class="qcard reveal">
+          <div class="qn">01</div>
+          <h3>빌더는 어떤 사람인가</h3>
+          <p>빌더는 어떤 사람이고, 무엇을 잘해야 하며, 어떻게 하면 더 잘할 수 있는가.</p>
+        </div>
+        <div class="qcard reveal">
+          <div class="qn">02</div>
+          <h3>그래서, 빌더스게이트는</h3>
+          <p>우리는 무엇을 할 것인가. 빌더라는 직군과 시스템 위에서 다음 한 걸음.</p>
+        </div>
+      </div>
+      <p class="topic-foot reveal">두 질문을 중심으로, 팀 활동·인터뷰·저녁 이벤트가 자연스럽게 이어집니다.</p>
+    </div>
+  </section>
+
+  <!-- prep -->
+  <section id="prep">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Before You Go</p>
+        <h2>가볍게 챙기면 좋아요</h2>
+      </div>
+      <div class="prep">
+        <div class="item reveal"><span>1박</span>세면도구 · 편한 옷</div>
+        <div class="item reveal"><span>작업</span>노트북 · 충전기</div>
+        <div class="item reveal"><span>컨디션</span>상비약 · 개인 물품</div>
+        <div class="item reveal"><span>마음가짐</span>마음껏 떠들 준비</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="b">Builders<b>gate</b> Workshop</div>
+    <div>2026. 06. 26 – 06. 27 · 서울 홍대</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="close" id="lbClose" aria-label="닫기">✕</button>
+  <button class="prev" id="lbPrev" aria-label="이전">‹</button>
+  <img id="lbImg" src="" alt="" />
+  <button class="next" id="lbNext" aria-label="다음">›</button>
+</div>
+
+<script>
+  // nav shadow on scroll
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+
+  // day tabs
+  document.querySelectorAll('.day-tabs button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.day-tabs button').forEach(b=>b.setAttribute('aria-selected',b===btn));
+      document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById(btn.dataset.day).classList.add('active');
+    });
+  });
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%6,5)*55)+'ms';io.observe(el);});
+
+  // lightbox
+  const imgs=[...document.querySelectorAll('#gallery img')];
+  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+  let idx=0;
+  function show(i){idx=(i+imgs.length)%imgs.length;lbImg.src=imgs[idx].src;lbImg.alt=imgs[idx].alt;}
+  imgs.forEach((im,i)=>im.parentElement.addEventListener('click',()=>{show(i);lb.classList.add('open');lb.setAttribute('aria-hidden','false');}));
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');}
+  document.getElementById('lbClose').onclick=close;
+  document.getElementById('lbNext').onclick=e=>{e.stopPropagation();show(idx+1);};
+  document.getElementById('lbPrev').onclick=e=>{e.stopPropagation();show(idx-1);};
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')show(idx+1);if(e.key==='ArrowLeft')show(idx-1);});
+</script>
+</body>
+</html>
