@@ -7,7 +7,11 @@
 <meta name="description" content="빌더스게이트 1박 2일 워크샵 안내 — 일정, 집합장소(스파크플러스 홍대점), 숙소, 토론 주제." />
 <meta property="og:title" content="Buildersgate Workshop · 2026.06.26–27" />
 <meta property="og:description" content="함께 짓는 1박 2일 — 빌더란 무엇이고, 빌더스게이트는 무엇을 할 것인가." />
-<meta property="og:image" content="assets/room-3.jpeg" />
+<meta property="og:image" content="assets/DUG-front.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="assets/DUG-front.png" />
+<link rel="icon" type="image/png" href="assets/DUG-front.png" />
+<link rel="apple-touch-icon" href="assets/DUG-front.png" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
@@ -61,8 +65,9 @@
   }
   nav.scrolled{border-bottom-color:var(--line)}
   .nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .brand{font-weight:800;letter-spacing:-.02em;font-size:1rem}
-  .brand b{color:var(--amber)}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .brand img{height:25px;width:auto;display:block}
+  .brand b{color:inherit;font-weight:800}
   .nav-links{display:flex;gap:4px}
   .nav-links a{
     font-size:.86rem;color:var(--muted);padding:7px 12px;border-radius:999px;
@@ -102,9 +107,9 @@
 
   /* ---------- sections ---------- */
   section{padding:clamp(56px,9vw,104px) 0}
-  .sec-head{margin-bottom:38px;max-width:46ch}
-  .sec-head h2{font-size:clamp(1.7rem,4.4vw,2.55rem);margin:.4em 0 .25em}
-  .sec-head p{color:var(--muted)}
+  .sec-head{margin-bottom:38px}
+  .sec-head h2{font-size:clamp(1.7rem,4.4vw,2.55rem);margin:.4em 0 .25em;text-wrap:balance}
+  .sec-head p{color:var(--muted);max-width:48ch}
 
   /* quick facts */
   .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-30px}
@@ -204,7 +209,18 @@
   footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--faint)}
   .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
   .foot-inner .b{font-weight:800;color:var(--muted)}
-  .foot-inner .b b{color:var(--amber)}
+  .foot-inner .b b{color:inherit;font-weight:800}
+
+  /* DUG mascot */
+  main section{position:relative}
+  .dug{position:absolute;z-index:3;pointer-events:none;user-select:none;line-height:0;filter:drop-shadow(0 14px 22px oklch(0.1 0.01 50 / .5))}
+  .dug img{width:100%;height:auto;display:block}
+  @keyframes floaty{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-12px) rotate(var(--rot,0deg))}}
+  .dug.float{animation:floaty 5.5s var(--ease) infinite}
+  .dug.float.slow{animation-duration:7s}
+  .dug.flip img{transform:scaleX(-1)}
+  @media(max-width:860px){.dug{width:84px !important}}
+  @media(max-width:560px){.dug.hide-m{display:none}}
 
   /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -226,7 +242,7 @@
 
 <nav id="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top">Builders<b>gate</b> · Workshop</a>
+    <a class="brand" href="#top"><img src="assets/brand-logo.png" alt="Buildersgate 로고" />Buildersgate · Workshop</a>
     <div class="nav-links">
       <a href="#schedule">일정</a>
       <a href="#place">집합</a>
@@ -247,6 +263,7 @@
       <span class="chip warm reveal"><span class="dot"></span>서울 홍대 · 1박 2일</span>
     </div>
   </div>
+  <div class="dug float slow" style="right:6%;bottom:14px;width:146px" aria-hidden="true"><img src="assets/DUG-front.png" alt="" /></div>
   <div class="scrollcue"><span></span>Scroll</div>
 </header>
 
@@ -276,6 +293,7 @@
 
   <!-- schedule -->
   <section id="schedule">
+    <div class="dug float flip hide-m" style="right:5%;top:130px;width:150px" aria-hidden="true"><img src="assets/DUG-side.png" alt="" /></div>
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow">Schedule</p>
@@ -316,6 +334,7 @@
 
   <!-- place -->
   <section id="place" style="background:var(--bg-2)">
+    <div class="dug float slow hide-m" style="right:4%;top:56px;width:116px" aria-hidden="true"><img src="assets/DUG-up.png" alt="" /></div>
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow">Meeting Point</p>
@@ -343,6 +362,7 @@
 
   <!-- stay -->
   <section id="stay">
+    <div class="dug float hide-m" style="right:3%;top:48px;width:138px" aria-hidden="true"><img src="assets/DUG-coffee.png" alt="" /></div>
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow">Where We Stay</p>
@@ -388,6 +408,7 @@
 
   <!-- topics -->
   <section id="topics" class="topics">
+    <div class="dug float flip hide-m" style="right:5%;top:60px;width:118px" aria-hidden="true"><img src="assets/DUG-front.png" alt="" /></div>
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow">What We'll Talk About</p>
@@ -427,7 +448,8 @@
   </section>
 </main>
 
-<footer>
+<footer style="position:relative;overflow:hidden">
+  <div class="dug hide-m" style="left:50%;top:6px;width:74px;margin-left:-37px" aria-hidden="true"><img src="assets/DUG-back.png" alt="" /></div>
   <div class="wrap foot-inner">
     <div class="b">Builders<b>gate</b> Workshop</div>
     <div>2026. 06. 26 – 06. 27 · 서울 홍대</div>
